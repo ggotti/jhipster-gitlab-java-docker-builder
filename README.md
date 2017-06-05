@@ -1,0 +1,1 @@
+# jhipster-java-with-docker

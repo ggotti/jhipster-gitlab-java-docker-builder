@@ -13,4 +13,10 @@ RUN add-apt-repository \
        $(lsb_release -cs) \
        stable"
 
-RUN apt-get update && apt-get install -y docker-ce
+RUN apt-get update && \
+    apt-get install -y docker-ce=17.03.0~ce-0~debian-jessie
+
+COPY docker-entrypoint.sh /usr/local/bin/
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["sh"]
